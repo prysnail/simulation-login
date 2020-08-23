@@ -1,8 +1,6 @@
 package com.prysnail.simulation.login.api.service;
 
-import com.prysnail.simulation.login.infra.UserConstant;
-
-import java.io.IOException;
+import com.prysnail.simulation.login.infra.constant.UserConstant;
 
 /**
  * 用户名获取抽象类

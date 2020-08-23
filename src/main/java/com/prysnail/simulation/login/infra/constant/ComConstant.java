@@ -1,4 +1,4 @@
-package com.prysnail.simulation.login.infra;
+package com.prysnail.simulation.login.infra.constant;
 
 /**
  * 通用常量类

@@ -1,7 +1,7 @@
 package com.prysnail.simulation.login.api.service.impl;
 
 import com.prysnail.simulation.login.api.service.AbstractUserNameAcquire;
-import com.prysnail.simulation.login.infra.ComConstant;
+import com.prysnail.simulation.login.infra.constant.ComConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
