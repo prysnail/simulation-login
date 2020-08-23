@@ -1,8 +1,15 @@
 package com.prysnail.simulation.login.api.service.impl;
 
 import com.prysnail.simulation.login.api.service.IUserNameAcquire;
+import com.prysnail.simulation.login.infra.ComConstant;
+import com.prysnail.simulation.login.infra.UserConstant;
+import org.springframework.util.StringUtils;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import static com.prysnail.simulation.login.infra.ComConstant.USER_NAME_PROPERTY;
 
 /**
  * 属性用户类
@@ -12,6 +19,14 @@ import java.io.IOException;
 public class PropertyUser implements IUserNameAcquire {
     @Override
     public String acquireUserName() throws IOException {
-        return null;
+        //可实现动态加载配置文件，读取最新的配置信息
+        Properties properties = new Properties();
+        InputStream in = PropertyUser.class.getClassLoader().getResourceAsStream("application.properties");
+        properties.load(in);
+        String propertyKey = properties.stringPropertyNames().stream()
+                .filter(ComConstant.USER_NAME_PROPERTY::equals)
+                .findFirst()
+                .get();
+        return StringUtils.isEmpty(propertyKey) ? UserConstant.DEFAULT_USER_NAME : properties.getProperty(propertyKey);
     }
 }
