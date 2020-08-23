@@ -1,6 +1,6 @@
 package com.prysnail.simulation.login.api.service.impl;
 
-import com.prysnail.simulation.login.api.service.IUserNameAcquire;
+import com.prysnail.simulation.login.api.service.AbstractUserNameAcquire;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
  * @author prysnail
  * @date 2020/8/23 11:36
  */
-public class EnvUser implements IUserNameAcquire {
+public class EnvUser extends AbstractUserNameAcquire {
 
     @Override
     public String acquireUserName() throws IOException {
